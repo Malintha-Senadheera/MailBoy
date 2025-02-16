@@ -1,3 +1,5 @@
 @echo off
 title Opening a File Lesson
-cmd /k python "C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\outlookauto\test.py"
+
+call "C:\Users\mainm\Documents\MailBoy\MailBoy\Scripts\activate.bat"
+cmd /k python "C:\Users\mainm\Documents\MailBoy\main.py

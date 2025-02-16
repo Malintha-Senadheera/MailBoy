@@ -6,6 +6,10 @@ import os
 import time  # Import time for making delay
 import pyfiglet
 import subprocess
+import sys
+
+# This is for changing the color of program text
+print("\033[1;32;10m")
 
 # Pyfiglet CLI
 result = pyfiglet.figlet_format("Mail Sender")
@@ -162,8 +166,15 @@ while True:
 
     # Choice 6: Exit Program
     elif choice == "6":
-        print("\n👋 Exiting program. Goodbye!")
-        break
+        exit_confirm = input("\n Are you sure you want to exit? (yes/no): ").strip().lower()
+        if exit_confirm == "yes":
+            print("\n👋 Exiting program. Goodbye!")
+            time.sleep(2.5) # Small delay befor the exit
+            sys.exit()
+
+        else:
+            print("\n Returning to the menu...")
+            continue
 
     else:
         print("\n⚠️ Invalid choice. Please enter a number between 1-6.")
