@@ -7,9 +7,11 @@ import time  # Import time for making delay
 import pyfiglet
 import subprocess
 import sys
+from colorama import init, Fore, Style
 
 # This is for changing the color of program text
-print("\033[1;32;10m")
+init()
+print(Style.BRIGHT + Fore.GREEN)
 
 # Pyfiglet CLI
 result = pyfiglet.figlet_format("Mail Sender")
@@ -89,10 +91,10 @@ email_content_file = "email_content.html"  # Single file for subject + body
 
 # Update image paths (ensure these files exist)
 image_paths = [
-    r"C:\Users\mainm\Documents\MailBoy\images\image1.jpg",
-    r"C:\Users\mainm\Documents\MailBoy\images\image2.jpg",
-    r"C:\Users\mainm\Documents\MailBoy\images\image3.png",
-    r"C:\Users\mainm\Documents\MailBoy\images\image4.png"
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image1.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image2.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image3.png",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image4.png"
 ]
 
 # **Menu System**
@@ -120,6 +122,8 @@ while True:
 
     # Choice 2: Edit Email List
     elif choice == "2":
+        xfile = r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\Else\Hotels in ratnapura distric.xlsx"
+        os.startfile(xfile)
         subprocess.run(["notepad.exe", email_file])
 
     # Choice 3: Edit CC Emails
