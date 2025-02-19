@@ -87,7 +87,8 @@ def send_email_with_content(to, cc, subject, body, image_paths):
 # Paths for mail content
 email_file = "emails.txt"
 cc_file = "cc_emails.txt"
-email_content_file = "email_content.html"  # Single file for subject + body
+Alutec_email_content_file = "Alutec_Content.html"  # Single file for subject + body
+SPK_email_content_file = "SPK_Content.html"  # Single file for subject + body
 
 # Update image paths (ensure these files exist)
 image_paths = [
@@ -132,41 +133,74 @@ while True:
 
     # Choice 4: Send Emails
     elif choice == "4":
-        # Read data from files
-        email_list = read_emails_from_file(email_file)
-        cc_list = read_emails_from_file(cc_file)
-        subject, body_template = read_subject_and_body(email_content_file)
-
-        cc_recipients = ", ".join(cc_list) if cc_list else ""
-
-        if not email_list:
-            print("\n⚠️ No emails to send.")
-        else:
-            print("\n📩 Emails will be sent to the following addresses:")
-            for email in email_list:
-                print(f"➡️ {email}")
-            print(f"📌 CC: {cc_recipients if cc_recipients else 'No CC recipients'}")
-
-            confirm = input("\n❓ Are you sure you want to send the emails? (yes/no): ").strip().lower()
-            if confirm != "yes":
-                print("❌ Email sending cancelled.")
-                continue
-
-            # Send emails with delay if count < 3
-            if len(email_list) > 3:
-                for email in email_list:
-                    send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
-                    print("⏳ Waiting 1 minute before sending the next email...")
-                    time.sleep(60)  # **Wait for 60 seconds before sending the next email** 
+        print("Which Section Do You Want To Send Emails?")
+        print("1. SPK Outdoors")
+        print("2. Alutech Aluminium")
+        
+        if choice == "1":
+            email_list = read_emails_from_file(email_file)
+            cc_list = read_emails_from_file(cc_file)
+            subject, body_template = read_subject_and_body(SPK_email_content_file)
+            cc_recipients = ", ".join(cc_list) if cc_list else ""
+            if not email_list:
+                print("\n⚠️ No emails to send.")
             else:
+                print("\n📩 Emails will be sent to the following addresses:")
                 for email in email_list:
-                    send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                    print(f"➡️ {email}")
+                print(f"📌 CC: {cc_recipients if cc_recipients else 'No CC recipients'}")
+                confirm = input("\n❓ Are you sure you want to send the emails? (yes/no): ").strip().lower()
+                if confirm != "yes":
+                    print("❌ Email sending cancelled.")
+                    continue
+                if len(email_list) > 3:
+                    for email in email_list:
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        print("⏳ Waiting 1 minute before sending the next email...")
+                        time.sleep(60)  # **Wait for 60 seconds before sending the next email**
+                else:
+                    for email in email_list:
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                print("\n✅ All emails sent successfully!")
+        elif choice == "2":
+            email_list = read_emails_from_file(email_file)
+            cc_list = read_emails_from_file(cc_file)
+            subject, body_template = read_subject_and_body(Alutec_email_content_file)
+            cc_recipients = ", ".join(cc_list) if cc_list else ""
+            if not email_list:
+                print("\n⚠️ No emails to send.")
+            else:
+                print("\n📩 Emails will be sent to the following addresses:")
+                for email in email_list:
+                    print(f"➡️ {email}")
+                print(f"📌 CC: {cc_recipients if cc_recipients else 'No CC recipients'}")
+                confirm = input("\n❓ Are you sure you want to send the emails? (yes/no): ").strip().lower()
+                if confirm != "yes":
+                    print("❌ Email sending cancelled.")
+                    continue
+                if len(email_list) > 3:
+                    for email in email_list:
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        print("⏳ Waiting 1 minute before sending the next email...")
+                        time.sleep(60)  # **Wait for 60 seconds before sending the next email**
+                else:
+                    for email in email_list:
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                print("\n✅ All emails sent successfully!")
+        else:
+            print("\n⚠️ Invalid choice. Please enter a number between 1-2.")
 
-            print("\n✅ All emails sent successfully!")
 
     # Choice 5: Edit Email Content
     elif choice == "5":
-        subprocess.run(["notepad.exe", email_content_file])
+        print("Which Section Do You Want To Edit Mail Content?")
+        print("1. SPK Outdoors")
+        print("2. Alutech Aluminium")
+        choice = input("Enter Your Choice: ").strip()
+        if choice == "1":
+            subprocess.run(["notepad.exe", Alutec_email_content_file])
+        elif choice == "2":
+            subprocess.run(["notepad.exe", SPK_email_content_file])
 
     # Choice 6: Exit Program
     elif choice == "6":
