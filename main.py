@@ -91,7 +91,13 @@ Alutec_email_content_file = "Alutec_Content.html"  # Single file for subject + b
 SPK_email_content_file = "SPK_Content.html"  # Single file for subject + body
 
 # Update image paths (ensure these files exist)
-image_paths = [
+image_paths_SPK = [
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image1.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image2.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image3.png",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image4.png"
+]
+image_paths_Alutec = [
     r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image1.jpg",
     r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image2.jpg",
     r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image3.png",
@@ -156,12 +162,12 @@ while True:
                     continue
                 if len(email_list) > 3:
                     for email in email_list:
-                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths_SPK)
                         print("⏳ Waiting 1 minute before sending the next email...")
                         time.sleep(60)  # **Wait for 60 seconds before sending the next email**
                 else:
                     for email in email_list:
-                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths_Alutec)
                 print("\n✅ All emails sent successfully!")
         elif choice == "2":
             email_list = read_emails_from_file(email_file)
