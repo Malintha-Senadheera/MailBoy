@@ -136,6 +136,7 @@ while True:
         print("Which Section Do You Want To Send Emails?")
         print("1. SPK Outdoors")
         print("2. Alutech Aluminium")
+        choice = input("Enter Your Choice: ").strip()
         
         if choice == "1":
             email_list = read_emails_from_file(email_file)
