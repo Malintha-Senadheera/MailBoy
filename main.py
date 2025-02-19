@@ -92,16 +92,16 @@ SPK_email_content_file = "SPK_Content.html"  # Single file for subject + body
 
 # Update image paths (ensure these files exist)
 image_paths_SPK = [
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image1.jpg",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image2.jpg",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image3.png",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image4.png"
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\SPK1.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\SPK2.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\SPK3.png",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\spkLogo.png"
 ]
 image_paths_Alutec = [
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image1.jpg",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image2.jpg",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image3.png",
-    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\image4.png"
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\A1.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\A2.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\A3.jpg",
+    r"C:\Users\ALUTECH RATHNAPURA\Documents\Malintha\MailBoy\images\Alogo.png"
 ]
 
 # **Menu System**
