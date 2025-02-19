@@ -187,12 +187,12 @@ while True:
                     continue
                 if len(email_list) > 3:
                     for email in email_list:
-                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths_SPK)
                         print("⏳ Waiting 1 minute before sending the next email...")
                         time.sleep(60)  # **Wait for 60 seconds before sending the next email**
                 else:
                     for email in email_list:
-                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths)
+                        send_email_with_content(email, cc_recipients, subject, body_template, image_paths_Alutec)
                 print("\n✅ All emails sent successfully!")
         else:
             print("\n⚠️ Invalid choice. Please enter a number between 1-2.")
